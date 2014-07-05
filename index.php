@@ -6,6 +6,12 @@
 	<?php require 'controller.php'; ?>
 	</head>
 	<body>
-	Password Generator
+		<h1>xkcd Password Generator</h1>
+		<form action="index.php" method="POST">
+			<input type="input" name="num_words" />
+			<input type="submit" />
+		</form>
+		</br>
+		Password = <?php echo $result; ?>
 	</body>
 </html>
