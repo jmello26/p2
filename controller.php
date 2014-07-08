@@ -7,6 +7,7 @@ $inc_number = $_POST['inc_number'];
 $to_case = $_POST['to_case'];
 $result = "";
 
+// dictionary of 100 random words (taken from https://sites.google.com/site/thissiteistotallyrandom/100-random-words)
 $dictionary = array("sausage","blubber","pencil","cloud","moon","water","computer","school","network","hammer","walking","violently","mediocre","literature",
 "chair","two","window","cords","musical","zebra","xylophone","penguin","home","dog","final","ink","teacher","fun","website","banana","uncle","softly","mega",
 "ten","awesome","attach","blue","internet","bottle","tight","zone","tomato","prison","hydro","cleaning","television","send","frog","cup","book","zooming",
@@ -20,27 +21,27 @@ $symbols = array("!", "@", "#", "$", "%", "^", "&", "*", "+", "~",);
 for ($i = 0; $i < $num_words; $i++) {
 	$word = $dictionary[rand(0, count($dictionary)-1)];
 	if ($i == 0) {
-		$result = $word;
+		$result = $word;	// special handling for the first word
 	}
 	else {
-		$result = $result . " " . $word;
+		$result = $result . " " . $word;	// separate the words with a space character
 	}
 }
 
 if ($to_case == "upper"){
-	$result = strtoupper($result);
+	$result = strtoupper($result);	// uppercase the result
 }
 else if ($to_case == "lower") {
-	$result = strtolower($result);
+	$result = strtolower($result);	// lowercase the result
 }
 else if ($to_case == "camel") {
-	$result = ucwords($result);
+	$result = ucwords($result);		// camelcase the result
 }
 
 if($inc_number == "on") {
-	$result = $result . " " . $numbers[rand(0,9)];
+	$result = $result . " " . $numbers[rand(0, count($numbers)-1)];
 }
 
 if ($inc_symbol == "on") {
-	$result = $result . " " . $symbols[rand(0,9)];
+	$result = $result . " " . $symbols[rand(0, count($symbols)-1)];
 }
