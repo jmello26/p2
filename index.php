@@ -8,30 +8,34 @@
 	
 	<script>
 		function validate_num (id) {
-			/* alert("1"); */
-			var words = getElementById("num_words").value;
-			alert(words);
-			if (words >= 1 && words <= 9) {
-				return;
+			var numwords = document.getElementById("num_words").value;
+			var subButton = document.getElementById("submit_button");
+			
+			if (numwords >= 1 && numwords <= 9) {
+				subButton.disabled = false;
 			}
 			else {
-				alert("Please enter a number between 1 and 9!");
+				alert("Enter a number between 1 and 9!");
+				subButton.disabled = true;
 			}
+			return;
 		}
 	</script>
 	</head>
 	
 	<body>
-		<h1>xkcd Password Generator</h1>
 		<form action="index.php" method="POST">
-			<input type="input" name="num_words" id="num_words" onchange="validate_num(this)" /><br/>
-			<input type="checkbox" name="inc_number" id="inc_number">Include a number</input><br/>
-			<input type="checkbox" name="inc_symbol" id="inc_symbol">Include a symbol</input><br/>
-			<input type="radio" name="to_case" id="to_case" value="upper">All uppercase</input>
-			<input type="radio" name="to_case" id="to_case" value="lower">All lowercase</input><br/>
-			<input type="submit" /><br/>
+			<div style="text-align:center; width:100%; font-size:20pt">
+				<h1>xkcd Password Generator</h1>
+				Number of Words:<input type="input" name="num_words" id="num_words" size="4" onchange="validate_num(this)" ></input><br/>
+				<input type="checkbox" name="inc_number" id="inc_number">Include a Number</input><br/>
+				<input type="checkbox" name="inc_symbol" id="inc_symbol">Include a Symbol</input><br/>
+				<input type="radio" name="to_case" id="to_case" value="upper">All Uppercase</input>
+				<input type="radio" name="to_case" id="to_case" value="lower">All Lowercase</input><br/>
+				<input type="submit" id="submit_button" disabled="true" /><br/>
+				</br>
+				<?php if($result != "") { echo "Password = $result"; } ?>
+			</div>
 		</form>
-		</br>
-		<span> Password = <?php echo $result; ?> </span>
 	</body>
 </html>
