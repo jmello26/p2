@@ -7,7 +7,13 @@ $inc_number = $_POST['inc_number'];
 $to_case = $_POST['to_case'];
 $result = "";
 
-$dictionary = array("cat", "dog", "horse", "rabbit", "koala", "elephant", "sloth", "jaguar", "raccoon", "turtle", "lion");
+$dictionary = array("sausage","blubber","pencil","cloud","moon","water","computer","school","network","hammer","walking","violently","mediocre","literature",
+"chair","two","window","cords","musical","zebra","xylophone","penguin","home","dog","final","ink","teacher","fun","website","banana","uncle","softly","mega",
+"ten","awesome","attach","blue","internet","bottle","tight","zone","tomato","prison","hydro","cleaning","television","send","frog","cup","book","zooming",
+"falling","evilly","gamer","lid","juice","moniter","captain","bonding","loudly","thudding","guitar","shaving","hair","soccer","water","racket","table","late",
+"media","desktop","flipper","club","flying","smooth","monster","purple","guardian","bold","hyperlink","presentation","world","national","comment","element",
+"magic","lion","sand","crust","toast","jam","hunter","forest","foraging","silently","joshing","pong");
+
 $numbers = array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
 $symbols = array("!", "@", "#", "$", "%", "^", "&", "*", "+", "~",);
 
