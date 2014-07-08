@@ -7,7 +7,9 @@ $inc_number = $_POST['inc_number'];
 $to_case = $_POST['to_case'];
 $result = "";
 
-$dictionary = Array("cat", "dog", "horse", "rabbit", "koala", "elephant", "sloth", "jaguar", "raccoon", "turtle", "lion");
+$dictionary = array("cat", "dog", "horse", "rabbit", "koala", "elephant", "sloth", "jaguar", "raccoon", "turtle", "lion");
+$numbers = array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+$symbols = array("!", "@", "#", "$", "%", "^", "&", "*", "+", "~",);
 
 for ($i = 0; $i < $num_words; $i++) {
 	$word = $dictionary[rand(0, count($dictionary)-1)];
@@ -27,9 +29,9 @@ else if ($to_case == "lower") {
 }
 
 if($inc_number == "on") {
-	$result = $result . "-@";
+	$result = $result . $numbers[rand(0,9)];
 }
 
 if ($inc_symbol == "on") {
-	$result = $result . "-4";
+	$result = $result . $symbols[rand(0,9)];
 }
