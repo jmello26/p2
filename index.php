@@ -27,14 +27,15 @@
 		<form action="index.php" method="POST">
 			<div style="text-align:center; width:100%; font-size:20pt">
 				<h1>xkcd Password Generator</h1>
-				Number of Words:<input type="input" name="num_words" id="num_words" size="4" onchange="validate_num(this)" ></input><br/>
-				<input type="checkbox" name="inc_number" id="inc_number">Include a Number</input><br/>
-				<input type="checkbox" name="inc_symbol" id="inc_symbol">Include a Symbol</input><br/>
-				<input type="radio" name="to_case" id="to_case" value="upper">All Uppercase</input>
-				<input type="radio" name="to_case" id="to_case" value="lower">All Lowercase</input><br/>
-				<input type="submit" id="submit_button" disabled="true" /><br/>
+				Number of Words (1-9):<input type="input" name="num_words" id="num_words" size="4" onchange="validate_num(this)" value="<?php echo $num_words ?>"></input><br/>
+				<input type="checkbox" name="inc_number" id="inc_number" <?php echo ($inc_number == "on") ? "checked" : ""; ?> >Include a Number</input><br/>
+				<input type="checkbox" name="inc_symbol" id="inc_symbol" <?php echo ($inc_symbol == "on") ? "checked" : ""; ?> >Include a Symbol</input><br/>
+				<input type="radio" name="to_case" id="to_case" value="upper" <?php echo ($to_case == "upper") ? "checked" : ""; ?> >Uppercase</input>
+				<input type="radio" name="to_case" id="to_case" value="lower" <?php echo ($to_case == "lower") ? "checked" : ""; ?> >Lowercase</input>
+				<input type="radio" name="to_case" id="to_case" value="camel" <?php echo ($to_case == "camel") ? "checked" : ""; ?> >Camelcase</input><br/><br/>
+				<input type="submit" id="submit_button" value="Get Password" /><br/>
 				</br>
-				<?php if($result != "") { echo "Password = $result"; } ?>
+				<?php echo ($result != "") ? "Password = $result" : ""; ?>
 			</div>
 		</form>
 	</body>
