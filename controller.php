@@ -23,7 +23,7 @@ for ($i = 0; $i < $num_words; $i++) {
 		$result = $word;
 	}
 	else {
-		$result = $result . "-" . $word;
+		$result = $result . " " . $word;
 	}
 }
 
@@ -33,11 +33,14 @@ if ($to_case == "upper"){
 else if ($to_case == "lower") {
 	$result = strtolower($result);
 }
+else if ($to_case == "camel") {
+	$result = ucwords($result);
+}
 
 if($inc_number == "on") {
-	$result = $result . $numbers[rand(0,9)];
+	$result = $result . " " . $numbers[rand(0,9)];
 }
 
 if ($inc_symbol == "on") {
-	$result = $result . $symbols[rand(0,9)];
+	$result = $result . " " . $symbols[rand(0,9)];
 }
